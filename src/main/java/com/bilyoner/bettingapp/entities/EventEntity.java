@@ -52,9 +52,6 @@ public class EventEntity {
     @Column(name = "current_bet_amount")
     private BigDecimal currentBetAmount;
 
-    @Version
-    private int version;
-
     public BigDecimal getCurrentBetAmount() {
         if (Objects.isNull(currentBetAmount)) {
             currentBetAmount = BigDecimal.ZERO;
