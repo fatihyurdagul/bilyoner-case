@@ -47,9 +47,7 @@ public class EventServiceImpl implements EventService {
                 eventRepository.save(event);
                 updatedEvents.add(event);
             } catch (Exception e) {
-                log.warn("Event {} lock altında. Güncelleme atlandı.", event.getId());
-                log.warn("Oran güncellenemedi. Event işlemde: {}", event.getId());
-                log.warn("pesimistic lock Oran güncellenemedi. Event işlemde: {}", event.getId());
+                log.warn("Event rate {} did not update", event.getId());
             }
         }
 
